@@ -1,0 +1,257 @@
+﻿@*@model IEnumerable<cosen.Models.kdt_style_detail_procResult>*@
+@model cosen.Models.DetalsAndCategories
+@{
+    ViewBag.Title = "发布产品信息";
+}
+
+<h3>选择要添加的SKU</h3>
+
+<div class="container">
+    <div class="row">
+
+        <table class="table table-condensed table-hover table-striped" id="tb_details">
+            <tr>
+                <th>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" onclick="MyTestViewModel.selectAll(this);">
+                        </label>
+                    </div>
+                </th>
+                <th>
+                    名称
+                </th>
+                <th>
+                    SKU
+                </th>
+
+                <th>
+                    颜色
+                </th>
+                <th>
+                    尺码
+                </th>
+                <th>
+                    单价
+                </th>
+                <th>
+                    库存
+                </th>
+                <th>
+                    上传时间
+                </th>
+                <th>图片</th>
+            </tr>
+            @{
+
+                string ext = ".jpg";
+            }
+            @foreach (var item in Model.Details)
+            {
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"
+                                       data-style_no="@item.Sty_no@item.Col_no@item.Siz_no"
+                                       data-style="@item.Sty_no"
+                                       data-col_no="@item.Col_no"
+                                       data-color="@item.Col_dr"
+                                       data-size="@item.Siz_dr"
+                                       data-num="@item.Com_qu"
+                                       data-price="@item.Unt_pr" data-bind="click:calculate">
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Com_nm)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sty_no)@Html.DisplayFor(modelItem => item.Col_no)@Html.DisplayFor(modelItem => item.Siz_no)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Col_dr)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Siz_dr)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Unt_pr)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Com_qu)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.uptime)
+                    </td>
+                    <td>
+                        <img src="http://www.cosen168.com:84/single/@item.Sty_no@item.Col_no@ext" />
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    @*<hr style="border:1px solid blue" />*@
+    <form id="frm_item" method="post" action="/product/UploadProductItems" enctype="multipart/form-data">
+        <div class="row">
+            <h3>编辑SKU</h3>
+
+        </div>
+        @*<div class="row" id="div_category" data-bind="event:{load:function(data,event){loadCategory(data,event);}}">*@
+        <div class="row">
+            
+            @*@Html.Partial("_PartialCategory", Model.CTs)*@
+            @{
+                Html.RenderPartial("_PartialCategory", Model.CTs);
+            }
+        </div>
+
+        <div>
+            <table class="table table-condensed table-hover table-striped">
+                <tr class="success">
+                    <td colspan="6"><label class="control-label">商品属性</label> </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label">商品标题</label>
+                    </td>
+                    <td><input type="text" data-bind="value:title" class="form-control" /></td>
+                    <td><span style="color:red">*</span><span style="color:gray">不能超过100字</span></td>
+                    <td>
+                        <label class="control-label">商品描述</label>
+                    </td>
+                    <td>
+                        <textarea data-bind="value:desc" class="form-control" cols="20" rows="5"></textarea>
+                    </td>
+                    <td><span style="color:red">*</span><span style="color:gray">字数5-25000个字符</span></td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label">商品价格</label>
+                    </td>
+                    <td><input type="text" data-bind="value:price" class="form-control" /></td>
+                    <td><span style="color:red">*</span><span style="color:gray">取值范围：0.01-100000000</span></td>
+                    <td>
+                        <label class="control-label">商品图片</label>
+                    </td>
+                    <td><input type="file" name="imgfiles" multiple class="form-control" data-bind="value:files" /></td>
+                    <td> <span style="color:red">*</span> <span style="color:gray">一次上传多张</span></td>
+
+
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label">运费</label>
+                    </td>
+                    <td><input type="text" data-bind="value:post_fee" class="form-control" /></td>
+                    <td><span style="color:red">*</span><span style="color:gray">取值范围0.00-999.00</span></td>
+                    <td>
+                        <label class="control-label">Sku的属性串</label>
+                    </td>
+                    <td><input type="text" data-bind="value:sku_properties" class="form-control" /></td>
+                    <td></td>
+
+
+
+
+
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label">Sku的数量串</label>
+                    </td>
+                    <td><input type="text" data-bind="value:sku_quantities" class="form-control" /></td>
+                    <td></td>
+                    <td>
+                        <label class="control-label">Sku的价格串</label>
+                    </td>
+                    <td><input type="text" data-bind="value:sku_prices" class="form-control" /></td>
+                    <td></td>
+
+
+
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label">Sku的商家编码</label>
+                    </td>
+                    <td>
+                        <input type="text" data-bind="value:sku_outer_ids" class="form-control" />
+                    </td>
+                    <td></td>
+                    <td>
+                        <label class="control-label">原价</label>
+                    </td>
+                    <td>
+                        <input type="text" data-bind="value:origin_price" class="form-control" />
+                    </td>
+                    <td></td>
+
+
+
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label">外部购买地址</label>
+                    </td>
+                    <td>
+                        <input type="text" data-bind="value:buy_url" class="form-control" />
+                    </td>
+                    <td></td>
+                    <td>
+                        <label class="control-label">每人限购多少件</label>
+                    </td>
+                    <td>
+                        <input type="text" data-bind="value:buy_quota" class="form-control" />
+                    </td>
+                    <td><span style="color:gray">0代表无限购，默认为0</span></td>
+
+
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label">是否隐藏商品库存</label>
+                    </td>
+                    <td>
+                        <input type="text" data-bind="value:hide_quantity" class="form-control" />
+                    </td>
+                    <td><span style="color:gray">默认0：显示库存，设置为1：不显示库存</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tfoot>
+                    <tr>
+
+                        <td colspan="6" class="text-center">
+                            <input type="submit" data-bind="click:function(data,event){uploadData(data,event);}" value="上传数据" class="btn btn-info" />
+                        </td>
+                    </tr>
+                </tfoot>
+
+            </table>
+        </div>
+    </form>
+
+</div>
+
+
+<div class="modal fade" id="loadmodal">
+    <div class="modal-dialog modal-sm" style="width:100px;">
+        <div class="modal-content">
+
+            <div class="modal-body text-center" id="loadcont">
+                <img src="http://cdn.staticfile.org/lightbox/2.6/img/loading.gif" />
+                @*<table data-bind="template:{name:'tmpdianpu',foreach:dianpus}"></table>*@
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+@section Scripts{
+    <script src="~/Scripts/MyJs/form.min.js"></script>
+    <script src="~/Scripts/MyJs/details.js"></script>
+}

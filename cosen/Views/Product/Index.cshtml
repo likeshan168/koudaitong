@@ -1,0 +1,167 @@
+﻿@model cosen.Models.Search_Result_Info
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@*<link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.2.0/css/bootstrap.min.css" type="text/css" />*@
+
+<div class="container">
+    <div class="row">
+        @*<form class="form-inline" role="form" method="post">*@
+        <div class="form-inline">
+            <div class="form-group">
+                <select id="searchT" class="form-control" name="searchT" data-bind="event:{change:sltchg}">
+                    @if ((string)ViewData["searchT"] == "1")
+                    {
+                        <option value="4">查询所有</option>
+                        <option value="1" selected="selected">款式</option>
+                        <option value="2">名称</option>
+                        <option value="3">库存</option>
+                    }
+                    else if ((string)ViewData["searchT"] == "4")
+                    {
+                        <option value="4" selected="selected">查询所有</option>
+                        <option value="1">款式</option>
+                        <option value="2">名称</option>
+                        <option value="3">库存</option>
+                    }
+                    else if ((string)ViewData["searchT"] == "2")
+                    {
+                        <option value="4">查询所有</option>
+                        <option value="1">款式</option>
+                        <option value="2" selected="selected">名称</option>
+                        <option value="3">库存</option>
+                    }
+                    else if ((string)ViewData["searchT"] == "3")
+                    {
+                        <option value="4">查询所有</option>
+                        <option value="1">款式</option>
+                        <option value="2">名称</option>
+                        <option value="3" selected="selected">库存</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="searchV" name="searchV" value="@ViewData["searchV"]" data-bind="visible:visitInput">
+            </div>
+            <div class="form-group">
+                @*<input type="submit" value="查询" class="btn btn-default" />*@
+                <input type="button" value="查询" class="btn btn-default" data-bind="click:search_submit" />
+            </div>
+            <div class="form-group" data-bind="visible:showMsg">
+                <span style="color:green;">正在获取数据...</span>
+            </div>
+            @*</form>*@
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-condensed table-hover table-striped">
+            <tr>
+                <th>
+                    序号
+                </th>
+                <th>
+                    款式
+                </th>
+                <th>
+                    名称
+                </th>
+                <th>
+                    库存
+                </th>
+                <th>
+                    单价
+                </th>
+                <th>上传时间</th>
+                <th></th>
+            </tr>
+            <tbody id="tbinfo">
+                @foreach (var item in Model.Infos)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.row_num)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.sty_no)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.com_nm)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.kucun)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.unt_pr)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.uptime)
+                        </td>
+                        <td>
+
+                            <a target="_blank" href="/product/details?styleNo=@item.sty_no&price=@item.unt_pr&name=@item.com_nm">明细</a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+    <div class="row">
+        <ul class="pagination">
+            <li><a href="#" data-bind="click:prevPage">&laquo;</a></li>
+            <!--ko foreach:pageArr-->
+            <li data-bind="attr:{class:$parent.activeCls()==$data?'active':''}"><a data-bind="click:function(data,event){$parent.selectPage(data,event);}" href="javasciprt:void(0);"><span data-bind="text:$data"></span></a></li>
+            <!--/ko-->
+
+            <li><a href="#" data-bind="click:nextPage">&raquo;</a></li>
+            &nbsp;
+            <li>共：<label id="totalPage">@ViewData["total"].ToString()</label> 页</li>
+            <li>第:<input type="number" min="1" max="@ViewData["total"].ToString()" class="input-sm" width="50" name="pageNum" data-bind="value:currentPage,event:{change:writePage}" />页&nbsp;<input type="button" value="Go" class="btn" data-bind="click:search" /></li>
+
+        </ul>
+    </div>
+
+</div>
+
+
+@*<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">详情</h4>
+                </div>
+                <div class="modal-body">
+                    @Html.Action("Category", "product")
+                    <hr style="border:1px solid blue" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+<div class="modal fade" id="loadmodal">
+    <div class="modal-dialog modal-sm" style="width:100px;height:60px;">
+        <div class="modal-content">
+
+            <div class="modal-body text-center" id="loadcont">
+                <img src="http://cdn.staticfile.org/lightbox/2.6/img/loading.gif" />
+                @*<table data-bind="template:{name:'tmpdianpu',foreach:dianpus}"></table>*@
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+@section scripts{
+
+    <script src="~/Scripts/MyJs/index.js"></script>
+
+}

@@ -1,0 +1,167 @@
+﻿{
+    "response": {
+        "categories": [
+            {
+                "cid": 1000000,
+                "parent_cid": 0,
+                "name": "\u670d\u88c5\u978b\u5305",
+                "is_parent": true,
+                "sub_categories": [
+                    {
+                        "cid": 1000001,
+                        "parent_cid": 1000000,
+                        "name": "\u7537\u88c5",
+                        "is_parent": false,
+                        "sub_categories": null
+                    },
+                    {
+                        "cid": 1000002,
+                        "parent_cid": 1000000,
+                        "name": "\u6d41\u884c\u7537\u978b",
+                        "is_parent": false,
+                        "sub_categories": null
+                    },
+                    {
+                        "cid": 1000003,
+                        "parent_cid": 1000000,
+                        "name": "\u5973\u88c5",
+                        "is_parent": false,
+                        "sub_categories": null
+                    },
+                    {
+                        "cid": 1000004,
+                        "parent_cid": 1000000,
+                        "name": "\u5973\u978b",
+                        "is_parent": false,
+                        "sub_categories": null
+                    },
+                    { "cid": 1000005, "parent_cid": 1000000, "name": "\u7bb1\u5305\u76ae\u5177", "is_parent": false, "sub_categories": null },
+                    { "cid": 1000006, "parent_cid": 1000000, "name": "\u5973\u58eb\u5185\u8863", "is_parent": false, "sub_categories": null }
+                ]
+            },
+            {
+                "cid": 2000000,
+                "parent_cid": 0,
+                "name": "\u7f8e\u5986\u9970\u54c1",
+                "is_parent": true,
+                "sub_categories": [
+                    { "cid": 2000001, "parent_cid": 2000000, "name": "\u5f69\u5986", "is_parent": false, "sub_categories": null },
+                    { "cid": 2000002, "parent_cid": 2000000, "name": "\u7f8e\u5bb9\u62a4\u80a4", "is_parent": false, "sub_categories": null },
+                    { "cid": 2000003, "parent_cid": 2000000, "name": "\u7f8e\u53d1\u62a4\u53d1", "is_parent": false, "sub_categories": null },
+                    { "cid": 2000004, "parent_cid": 2000000, "name": "\u73e0\u5b9d", "is_parent": false, "sub_categories": null },
+                    { "cid": 2000005, "parent_cid": 2000000, "name": "ZIPPO", "is_parent": false, "sub_categories": null },
+                    { "cid": 2000006, "parent_cid": 2000000, "name": "\u9970\u54c1", "is_parent": false, "sub_categories": null },
+                    { "cid": 2000007, "parent_cid": 2000000, "name": "\u624b\u8868", "is_parent": false, "sub_categories": null }
+                ]
+            },
+            {
+                "cid": 3000000,
+                "parent_cid": 0,
+                "name": "\u6bcd\u5a74\u7528\u54c1",
+                "is_parent": true,
+                "sub_categories": [
+                    { "cid": 3000001, "parent_cid": 3000000, "name": "\u5976\u7c89", "is_parent": false, "sub_categories": null },
+                    { "cid": 3000002, "parent_cid": 3000000, "name": "\u5c3f\u7247", "is_parent": false, "sub_categories": null },
+                    { "cid": 3000003, "parent_cid": 3000000, "name": "\u5b55\u5987\u88c5", "is_parent": false, "sub_categories": null },
+                    { "cid": 3000004, "parent_cid": 3000000, "name": "\u7ae5\u88c5", "is_parent": false, "sub_categories": null },
+                    { "cid": 3000005, "parent_cid": 3000000, "name": "\u73a9\u5177", "is_parent": false, "sub_categories": null },
+                    { "cid": 3000006, "parent_cid": 3000000, "name": "\u63a8\u8f66", "is_parent": false, "sub_categories": null }
+                ]
+            },
+            {
+                "cid": 4000000,
+                "parent_cid": 0,
+                "name": "\u767e\u8d27\u98df\u54c1",
+                "is_parent": true,
+                "sub_categories": [
+                    { "cid": 4000001, "parent_cid": 4000000, "name": "\u5c45\u5bb6\u65e5\u7528", "is_parent": false, "sub_categories": null },
+                    { "cid": 4000002, "parent_cid": 4000000, "name": "\u53a8\u623f", "is_parent": false, "sub_categories": null },
+                    { "cid": 4000003, "parent_cid": 4000000, "name": "\u6e05\u6d01", "is_parent": false, "sub_categories": null },
+                    { "cid": 4000004, "parent_cid": 4000000, "name": "\u4f20\u7edf\u6ecb\u8865\u8425\u517b\u54c1", "is_parent": false, "sub_categories": null },
+                    { "cid": 4000005, "parent_cid": 4000000, "name": "\u96f6\u98df", "is_parent": false, "sub_categories": null },
+                    { "cid": 4000006, "parent_cid": 4000000, "name": "\u7cae\u6cb9\u7c73\u9762", "is_parent": false, "sub_categories": null },
+                    { "cid": 4000007, "parent_cid": 4000000, "name": "\u6210\u4eba\u7528\u54c1", "is_parent": false, "sub_categories": null },
+                    { "cid": 4000008, "parent_cid": 4000000, "name": "\u6d17\u62a4\u6e05\u6d01\u5242", "is_parent": false, "sub_categories": null },
+                    { "cid": 4000009, "parent_cid": 4000000, "name": "\u8336", "is_parent": false, "sub_categories": null },
+                    { "cid": 4000010, "parent_cid": 4000000, "name": "\u4fdd\u5065\u54c1", "is_parent": false, "sub_categories": null },
+                    { "cid": 4000011, "parent_cid": 4000000, "name": "\u6c34\u4ea7\u8089\u7c7b", "is_parent": false, "sub_categories": null },
+                    { "cid": 4000012, "parent_cid": 4000000, "name": "\u9152\u6c34", "is_parent": false, "sub_categories": null }
+                ]
+            },
+            {
+                "cid": 5000000,
+                "parent_cid": 0,
+                "name": "\u624b\u673a\u6570\u7801",
+                "is_parent": true,
+                "sub_categories": [ { "cid": 5000001, "parent_cid": 5000000, "name": "\u56fd\u8d27\u7cbe\u54c1\u6570\u7801", "is_parent": false, "sub_categories": null }, { "cid": 5000002, "parent_cid": 5000000, "name": "\u624b\u673a", "is_parent": false, "sub_categories": null }, { "cid": 5000003, "parent_cid": 5000000, "name": "\u76f8\u673a", "is_parent": false, "sub_categories": null }, { "cid": 5000004, "parent_cid": 5000000, "name": "\u97f3\u4e50\u64ad\u653e\u5668", "is_parent": false, "sub_categories": null }, { "cid": 5000005, "parent_cid": 5000000, "name": "\u7b14\u8bb0\u672c\u7535\u8111", "is_parent": false, "sub_categories": null }, { "cid": 5000006, "parent_cid": 5000000, "name": "\u5e73\u677f\u7535\u8111", "is_parent": false, "sub_categories": null }, { "cid": 5000007, "parent_cid": 5000000, "name": " \u53f0\u5f0f\u673a", "is_parent": false, "sub_categories": null }, { "cid": 5000008, "parent_cid": 5000000, "name": "\u7535\u8111\u786c\u4ef6", "is_parent": false, "sub_categories": null }, { "cid": 5000009, "parent_cid": 5000000, "name": "\u7f51\u7edc\u8bbe\u5907", "is_parent": false, "sub_categories": null }, { "cid": 5000010, "parent_cid": 5000000, "name": "3C\u6570\u7801\u914d\u4ef6", "is_parent": false, "sub_categories": null }, { "cid": 5000011, "parent_cid": 5000000, "name": "\u95ea\u5b58\u5361", "is_parent": false, "sub_categories": null }, { "cid": 5000012, "parent_cid": 5000000, "name": "\u529e\u516c\u8bbe\u5907", "is_parent": false, "sub_categories": null }, { "cid": 5000013, "parent_cid": 5000000, "name": "\u7535\u5b50\u8bcd\u5178", "is_parent": false, "sub_categories": null } ]
+            },
+            {
+                "cid": 6000000,
+                "parent_cid": 0,
+                "name": "\u5bb6\u7528\u7535\u5668",
+                "is_parent": true,
+                "sub_categories": [ { "cid": 6000001, "parent_cid": 6000000, "name": "\u5927\u5bb6\u7535", "is_parent": false, "sub_categories": null }, { "cid": 6000002, "parent_cid": 6000000, "name": "\u5f71\u97f3\u7535\u5668", "is_parent": false, "sub_categories": null }, { "cid": 6000003, "parent_cid": 6000000, "name": "\u751f\u6d3b\u7535\u5668", "is_parent": false, "sub_categories": null }, { "cid": 6000004, "parent_cid": 6000000, "name": "\u53a8\u623f\u7535\u5668", "is_parent": false, "sub_categories": null }, { "cid": 6000005, "parent_cid": 6000000, "name": "\u4e2a\u4eba\u62a4\u7406", "is_parent": false, "sub_categories": null } ]
+            },
+            {
+                "cid": 7000000,
+                "parent_cid": 0,
+                "name": "\u8fd0\u52a8\u6237\u5916",
+                "is_parent": true,
+                "sub_categories": [ { "cid": 7000001, "parent_cid": 7000000, "name": "\u8fd0\u52a8", "is_parent": false, "sub_categories": null }, { "cid": 7000002, "parent_cid": 7000000, "name": "\u6237\u5916", "is_parent": false, "sub_categories": null }, { "cid": 7000003, "parent_cid": 7000000, "name": "\u8fd0\u52a8\u670d", "is_parent": false, "sub_categories": null }, { "cid": 7000004, "parent_cid": 7000000, "name": "\u8fd0\u52a8\u978b", "is_parent": false, "sub_categories": null }, { "cid": 7000005, "parent_cid": 7000000, "name": "\u8fd0\u52a8\u5305", "is_parent": false, "sub_categories": null } ]
+            },
+            {
+                "cid": 8000000,
+                "parent_cid": 0,
+                "name": "\u5bb6\u5c45\u5efa\u6750",
+                "is_parent": true,
+                "sub_categories": [
+                    { "cid": 8000001, "parent_cid": 8000000, "name": "\u5bb6\u5c45\u9970\u54c1", "is_parent": false, "sub_categories": null },
+                    { "cid": 8000002, "parent_cid": 8000000, "name": "\u7279\u8272\u624b\u5de5\u827a", "is_parent": false, "sub_categories": null },
+                    { "cid": 8000003, "parent_cid": 8000000, "name": "\u4f4f\u5b85\u5bb6\u5177", "is_parent": false, "sub_categories": null },
+                    { "cid": 8000004, "parent_cid": 8000000, "name": "\u5546\u4e1a", "is_parent": false, "sub_categories": null },
+                    { "cid": 8000005, "parent_cid": 8000000, "name": "\u5bb6\u88c5\u4e3b\u6750", "is_parent": false, "sub_categories": null },
+                    { "cid": 8000006, "parent_cid": 8000000, "name": "\u57fa\u7840\u5efa\u6750", "is_parent": false, "sub_categories": null },
+                    { "cid": 8000007, "parent_cid": 8000000, "name": "\u4e94\u91d1", "is_parent": false, "sub_categories": null },
+                    { "cid": 8000008, "parent_cid": 8000000, "name": "\u7535\u5b50", "is_parent": false, "sub_categories": null },
+                    { "cid": 8000009, "parent_cid": 8000000, "name": "\u5e8a\u4e0a\u7528\u54c1", "is_parent": false, "sub_categories": null },
+                    { "cid": 8000010, "parent_cid": 8000000, "name": "\u88c5\u4fee\u8bbe\u8ba1", "is_parent": false, "sub_categories": null }
+                ]
+            },
+            {
+                "cid": 9000000,
+                "parent_cid": 0,
+                "name": "\u6587\u5316\u73a9\u4e50",
+                "is_parent": true,
+                "sub_categories": [
+                    { "cid": 9000001, "parent_cid": 9000000, "name": "\u5ea6\u5047\u7ebf\u8def", "is_parent": false, "sub_categories": null },
+                    { "cid": 9000002, "parent_cid": 9000000, "name": "\u7279\u4ef7\u9152\u5e97", "is_parent": false, "sub_categories": null },
+                    { "cid": 9000003, "parent_cid": 9000000, "name": "\u53e4\u8463", "is_parent": false, "sub_categories": null },
+                    { "cid": 9000004, "parent_cid": 9000000, "name": "\u4e66\u7c4d", "is_parent": false, "sub_categories": null },
+                    { "cid": 9000005, "parent_cid": 9000000, "name": "\u97f3\u4e50", "is_parent": false, "sub_categories": null },
+                    { "cid": 9000006, "parent_cid": 9000000, "name": "\u4e50\u5668", "is_parent": false, "sub_categories": null },
+                    { "cid": 9000007, "parent_cid": 9000000, "name": "\u5ba0\u7269", "is_parent": false, "sub_categories": null },
+                    { "cid": 9000008, "parent_cid": 9000000, "name": "\u4ea4\u901a\u7968", "is_parent": false, "sub_categories": null },
+                    { "cid": 9000009, "parent_cid": 9000000, "name": "\u666f\u70b9\u95e8\u7968", "is_parent": false, "sub_categories": null }
+                ]
+            },
+            {
+                "cid": 12000000,
+                "parent_cid": 0,
+                "name": "\u6c7d\u8f66\u914d\u4ef6",
+                "is_parent": true,
+                "sub_categories": [
+                    { "cid": 12000001, "parent_cid": 12000000, "name": "\u6c7d\u8f66\u5185\u9970", "is_parent": false, "sub_categories": null }
+                ]
+            },
+            {
+                "cid": 13000000,
+                "parent_cid": 0,
+                "name": "\u5176\u4ed6",
+                "is_parent": true,
+                "sub_categories": [
+                    { "cid": 13000001, "parent_cid": 13000000, "name": "\u5176\u4ed6", "is_parent": false, "sub_categories": null }
+                ]
+            }
+        ]
+    }
+}

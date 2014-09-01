@@ -1,0 +1,61 @@
+﻿{
+    "response": {
+        "total_results": "1",
+        "trades": [
+            {
+                "num": 1,
+                "num_iid": "2397193",
+                "price": "0.01",
+                "pic_path": "http:\/\/imgqn.koudaitong.com\/upload_files\/2014\/08\/15\/140807518197531073.jpg",
+                "pic_thumb_path": "http:\/\/imgqn.koudaitong.com\/upload_files\/2014\/08\/15\/140807518197531073.jpg!200x0.jpg",
+                "title": "\u5f00\u886b",
+                "status": "WAIT_BUYER_CONFIRM_GOODS",
+                "shipping_type": "express",
+                "post_fee": "0.00",
+                "total_fee": "0.01",
+                "discount_fee": "0.00",
+                "payment": "0.01",
+                "created": "2014-08-15 12:05:08",
+                "pay_time": "2014-08-15 12:08:52",
+                "pay_type": "ALIPAY",
+                "consign_time": "2014-08-15 14:28:27",
+                "sign_time": "",
+                "buyer_area": "\u5317\u4eac\u6d77\u6dc0",
+                "orders": [
+                    {
+                        "outer_sku_id": "43214G-1403JB-",
+                        "outer_item_id": "",
+                        "title": "\u5f00\u886b",
+                        "seller_nick": "EissyKids \u7f51\u4e0a\u5546\u57ce",
+                        "price": "0.01",
+                        "total_fee": "0.01",
+                        "payment": "0.01",
+                        "discount_fee": "0.00",
+                        "sku_id": "5450163",
+                        "sku_properties_name": "\u989c\u8272:-1403JB-;\u5c3a\u5bf8:120",
+                        "pic_path": "http:\/\/imgqn.koudaitong.com\/upload_files\/2014\/08\/15\/140807518197531073.jpg",
+                        "pic_thumb_path": "http:\/\/imgqn.koudaitong.com\/upload_files\/2014\/08\/15\/140807518197531073.jpg!200x0.jpg",
+                        "buyer_messages": [ ],
+                        "num_iid": "2397193",
+                        "num": "1"
+                    }
+                ],
+                "tid": "E07530329928133",
+                "weixin_user_id": "32992813",
+                "buyer_nick": "\u674e\u514b\u5584",
+                "buyer_message": "",
+                "seller_flag": "0",
+                "trade_memo": "",
+                "receiver_city": "\u5317\u4eac",
+                "receiver_district": "\u987a\u4e49\u533a",
+                "receiver_name": "\u674e\u514b\u5584",
+                "receiver_state": "\u5317\u4eac\u5e02",
+                "receiver_address": "\u7a7a\u6e2f\u5de5\u4e1a\u56edA\u533a\u5929\u67f1\u897f\u8def12\u53f7\u96621\u697c2\u5c42",
+                "receiver_zip": "",
+                "receiver_mobile": "13520128540",
+                "feedback": "0",
+                "outer_tid": "2014081513522919"
+            }
+        ]
+    }
+}

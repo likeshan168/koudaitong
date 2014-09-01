@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="eissy" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=eissy;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="eissyConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.kdt_upload_item" Member="kdt_upload_item">
+    <Type Name="kdt_upload_item">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="styleno" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="colno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="size" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="uploadtime" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.kucun_kdt_view" Member="kucun_kdt_view">
+    <Type Name="kucun_kdt_view">
+      <Column Name="Com_nm" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Sty_no" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="Col_no" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Col_dr" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Siz_dr" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Siz_no" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Unt_pr" Type="System.Decimal" DbType="Decimal(18,8) NOT NULL" CanBeNull="false" />
+      <Column Name="Com_qu" Type="System.Decimal" DbType="Decimal(18,8) NOT NULL" CanBeNull="false" />
+      <Column Name="siz_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.kdt_style_kucun_proc" Method="kdt_style_kucun_proc">
+    <Parameter Name="style_no" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="style_name" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="kucun_num" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="flag" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="page_num" Type="System.Int32" DbType="Int" />
+    <ElementType Name="kdt_style_kucun_procResult">
+      <Column Name="row_num" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="sty_no" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="com_nm" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="kucun" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="unt_pr" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="uptime" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.kdt_style_detail_proc" Method="kdt_style_detail_proc">
+    <Parameter Name="style_no" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="kdt_style_detail_procResult">
+      <Column Name="Com_nm" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Sty_no" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="Col_no" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Col_dr" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Siz_dr" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Siz_no" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Unt_pr" Type="System.Decimal" DbType="Decimal(18,8) NOT NULL" CanBeNull="false" />
+      <Column Name="Com_qu" Type="System.Decimal" DbType="Decimal(38,8)" CanBeNull="true" />
+      <Column Name="siz_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="uptime" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

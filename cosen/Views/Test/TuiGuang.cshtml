@@ -1,0 +1,43 @@
+﻿@model IEnumerable<KouDaiTong.Models.ItemPromotionCategory>
+
+@{
+    ViewBag.Title = "TuiGuang";
+}
+
+<h2>TuiGuang</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
+
+<div>
+    <select class="form-control" >
+        @foreach (var item in Model)
+        {
+            <option  value="@item.id">@item.name</option>
+        }
+    </select>
+
+</div>

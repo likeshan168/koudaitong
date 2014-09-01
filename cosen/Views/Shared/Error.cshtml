@@ -1,0 +1,26 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "错误";
+}
+
+<h1 class="text-danger">错误。</h1>
+<h2 class="text-danger">@Model.Exception.Message</h2>
+
+<h3 class="text-danger">
+    @Model.Exception.StackTrace
+</h3>
+
+
+<h4 class="text-danger">
+    @Model.Exception.Source
+</h4>
+
+<h5 class="text-danger">
+    @Model.Exception.InnerException
+</h5>
+
+
+<h5 class="text-danger">
+    @Model.Exception.HelpLink
+</h5>

@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "订单信息";
+}
+
+<h2>订单信息</h2>
+<div class="container-fluid">
+
+    <form class="form-horizontal" role="form" id="frm" method="post" action="/order/index">
+
+        <table class="table table-condensed table-hover table-striped">
+
+            <tr>
+                <td colspan="4">
+                    <select class="form-control" data-bind="value:searchT">
+                        <option value="1">
+                            下单时间
+                        </option>
+                        <option value="2">
+                            付款时间
+                        </option>
+                    </select>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <label class="control-label">开始时间</label>
+                </td>
+
+                <td>
+                    <input type="date" class="form-control" name="startDate" data-bind="value:startDate" />
+                </td>
+                <td>
+                    <label class="control-label">截止时间</label>
+                </td>
+
+                <td>
+
+                    <input type="date" class="form-control" name="endDate" data-bind="value:endDate" />
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <label class="control-label">昵称</label>
+                </td>
+
+                <td>
+                    <input type="text" class="form-control" name="nichname" data-bind="value:nickname" />
+                </td>
+                <td>
+                    <label class="control-label">状态</label>
+                </td>
+
+                <td>
+                    <select class="form-control" data-bind="value:status">
+                        <option value="">所有</option>
+                        <option value="WAIT_BUYER_PAY">待付款</option>
+                        <option value="WAIT_SELLER_SEND_GOODS">待发货</option>
+                        <option value="WAIT_BUYER_CONFIRM_GOODS">已发货</option>
+                        <option value="TRADE_BUYER_SIGNED">已签收</option>
+                        <option value="TRADE_CLOSED">付款前关闭</option>
+                        <option value="TRADE_CLOSED_BY_USER">付款后关闭</option>
+                    </select>
+                </td>
+
+            </tr>
+            <tr>
+                <td colspan="4" class="text-center">
+                    <input type="submit" class="btn btn-primary" value="查询" data-bind="click:function(data,event){submitFrm(data,event);}" />
+                </td>
+            </tr>
+        </table>
+
+    </form>
+
+
+
+</div>
+
+<div class="modal fade" id="loadmodal">
+    <div class="modal-dialog modal-sm" style="width:100px;">
+        <div class="modal-content">
+
+            <div class="modal-body text-center" id="loadcont">
+                <img src="http://cdn.staticfile.org/lightbox/2.6/img/loading.gif" />
+                @*<table data-bind="template:{name:'tmpdianpu',foreach:dianpus}"></table>*@
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+@section Scripts
+{
+    <script src="~/Scripts/MyJs/form.min.js"></script>
+    <script src="~/Scripts/MyJs/order.js"></script>
+}

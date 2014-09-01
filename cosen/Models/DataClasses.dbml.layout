@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses">
+  <DataContextMoniker Name="/DataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="4c284180-ed5d-44db-ab13-9ca584f35130" absoluteBounds="2.75, 0.5, 2, 1.6169661458333331">
+      <DataClassMoniker Name="/DataClassesDataContext/kdt_upload_item" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fcd1fc58-0b49-4e8f-adfe-69ff8bbf2a52" absoluteBounds="2.765, 0.96, 1.9700000000000002, 1.0569661458333333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="035e3ca2-d92d-4e7b-9f11-f96f29b35743" absoluteBounds="0.875, 2.75, 2, 2.2914453125">
+      <DataClassMoniker Name="/DataClassesDataContext/kucun_kdt_view" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f72958b7-6510-4eb6-b22d-389b501477b3" absoluteBounds="0.89, 3.21, 1.9700000000000002, 1.7314453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

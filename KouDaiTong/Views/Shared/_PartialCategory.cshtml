@@ -1,0 +1,60 @@
+﻿@using KouDaiTong.Models
+@model CategoriesAndTags
+
+<table class="table table-condensed">
+    <tr class="success">
+        <td colspan="2">商品分类</td>
+    </tr>
+    <tr>
+
+        <td>
+            <select class="form-control" id="parent_categories" data-bind="event:{change:function(data,event){selectCategory(data,event);}}">
+                @foreach (var item in Model.ItemCategories)
+                {
+                    <option data-parent_cid="@item.parent_cid" value="@item.cid">@item.name</option>
+                }
+            </select>
+        </td>
+
+        <td>
+            <select data-bind="options:subCategories,optionsValue:'value',optionsText:'name',value:cid" class="form-control" id="sub_categories"></select>
+        </td>
+    </tr>
+    <tr class="success">
+        <td colspan="2">商品推广</td>
+    </tr>
+    <tr>
+
+        <td colspan="2">
+            <select class="form-control" data-bind="value:promotion_cid">
+                @foreach (var item in Model.ItemPromotionCategories)
+                {
+                    <option value="@item.id">@item.name</option>
+                }
+            </select>
+        </td>
+    </tr>
+    <tr class="success">
+        <td colspan="2">商品标签</td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            
+                @foreach (var item in Model.ItemTags)
+                {
+                    <div class="checkbox">
+                        <label>
+                            <input  type="radio" name="tags" value="@item.id" data-bind="checked:tag_ids"> @item.name
+                        </label>
+                    </div>
+
+                }
+                   
+        </td>
+    </tr>
+    
+</table>
+
+
+
+
