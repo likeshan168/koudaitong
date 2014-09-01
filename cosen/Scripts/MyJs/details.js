@@ -51,6 +51,7 @@ function MyTestViewModel() {
         self.price(self.getUrlParam('price'));
         self.title((self.getUrlParam("name")));
         self.getSub();
+        console.log(self.selectedSub());
     }
     //获取子类
     self.getSub = function () {
