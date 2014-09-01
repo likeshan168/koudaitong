@@ -38,7 +38,8 @@ function MyTestViewModel() {
 
 
 
-    self.selectedSub = ko.observableArray([{ value: '3000004', name: '童装' }]);//3000004
+    //self.selectedSub = ko.observableArray([{ value: '3000004', name: '童装' }]);//3000004
+
     //选择改变子类
     self.selectCategory = function (data, event) {
         self.pcid($(event.target).val());
@@ -48,10 +49,11 @@ function MyTestViewModel() {
     //初始化商品类别下拉框
     self.init = function () {
         self.pcid($("#parent_categories").val());
+        self.getSub();
         self.price(self.getUrlParam('price'));
         self.title((self.getUrlParam("name")));
-        self.getSub();
-        console.log(self.selectedSub());
+
+        //console.log(self.selectedSub());
 
     }
     //获取子类
@@ -65,8 +67,7 @@ function MyTestViewModel() {
 
             //$("#sub_categories").html(self.htmlStr.join(''));
             self.subCategories(self.htmlStr);
-
-            console.log(self.subCategories());
+            self.cid('3000004');
 
         });
     }
@@ -157,9 +158,11 @@ function MyTestViewModel() {
     //提交表单
     self.uploadData = function (data, event) {
         event.preventDefault();
-
-        if (self.title().length === 0) {
-            alert("清输入商品标题");
+        if (self.tag_ids() === undefined) {
+            alert("请选择商品标签");
+        }
+        else if (self.title().length === 0) {
+            alert("请输入商品标题");
 
         } else if (self.desc().length < 5) {
             alert("商品描述太短");
@@ -193,8 +196,8 @@ function MyTestViewModel() {
                 style_color_size: self.style_color_size//只为记录用的（就是记录上传的时间）
             };
 
-
-            $("#frm_item").ajaxSubmit(self.options);
+            console.log(self.options.data);
+            //$("#frm_item").ajaxSubmit(self.options);
         }
     }
     //获取url传递过来的参数
