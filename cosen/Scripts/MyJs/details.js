@@ -196,8 +196,8 @@ function MyTestViewModel() {
                 style_color_size: self.style_color_size//只为记录用的（就是记录上传的时间）
             };
 
-            console.log(self.options.data);
-            //$("#frm_item").ajaxSubmit(self.options);
+            //console.log(self.options.data);
+            $("#frm_item").ajaxSubmit(self.options);
         }
     }
     //获取url传递过来的参数

@@ -1,12 +1,10 @@
 ﻿@using cosen.Models
 @model CategoriesAndTags
-
 <table class="table table-condensed">
     <tr class="success">
         <td colspan="2">商品分类</td>
     </tr>
     <tr>
-
         <td>
             <select class="form-control" id="parent_categories" data-bind="event:{change:function(data,event){selectCategory(data,event);}}">
                 @foreach (var item in Model.ItemCategories)
@@ -23,16 +21,24 @@
                 }
             </select>
         </td>
-
         <td>
-            <select data-bind="options:subCategories,optionsValue:'value',optionsText:'name',value:cid,selectedOptions:selectedSub" class="form-control" id="sub_categories"></select>
+            <select data-bind="options:subCategories,optionsValue:'value',optionsText:'name',value:cid" class="form-control" id="sub_categories"></select>
+            @*<select data-bind="value:cid" class="form-control" id="sub_categories">
+                    <!--ko foreach:subCategories-->
+                    <!--ko if:value==='3000004'-->
+                    <option data-bind="value:value" selected="selected"><!--ko text:name--><!--/ko--></option>
+                    <!--/ko-->
+                    <!--ko if:value!=='3000004'-->
+                    <option data-bind="value:value"><!--ko text:name--><!--/ko--></option>
+                    <!--/ko-->
+                    <!--/ko-->
+                </select>*@
         </td>
     </tr>
     <tr class="success">
         <td colspan="2">商品推广</td>
     </tr>
     <tr>
-
         <td colspan="2">
             <select class="form-control" data-bind="value:promotion_cid">
                 @foreach (var item in Model.ItemPromotionCategories)
@@ -55,7 +61,6 @@
     </tr>
     <tr>
         <td colspan="2">
-
             @foreach (var item in Model.ItemTags)
             {
 
@@ -66,12 +71,6 @@
                 </div>
 
             }
-
         </td>
     </tr>
-
 </table>
-
-
-
-

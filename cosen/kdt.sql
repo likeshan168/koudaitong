@@ -1,4 +1,5 @@
 ﻿
+
 --记录上传过的商品时间
 create table [dbo].[kdt_upload_item] (
     [id]         int          identity (1, 1) not null,
