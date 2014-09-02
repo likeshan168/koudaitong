@@ -1,5 +1,5 @@
 ﻿/// <reference path="../knockout-3.1.0.debug.js" />
-
+///hello wolrd
 
 function MyTestViewModel() {
     var self = this;
