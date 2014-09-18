@@ -38,6 +38,9 @@
                     库存
                 </th>
                 <th>
+                    上市日期
+                </th>
+                <th>
                     上传时间
                 </th>
                 <th>图片</th>
@@ -59,7 +62,7 @@
                                        data-color="@item.Col_dr"
                                        data-size="@item.Siz_dr"
                                        data-num="@item.Com_qu"
-                                       data-price="@item.Unt_pr" data-bind="click:calculate">
+                                       data-price="@item.Unt_pr" data-editionhandle="@item.editionhandle" data-bind="click:calculate">
                             </label>
                         </div>
                     </td>
@@ -81,6 +84,9 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Com_qu)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.editionhandle)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.uptime)

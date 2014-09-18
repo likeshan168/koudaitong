@@ -1,5 +1,6 @@
 ﻿
 
+
 --记录上传过的商品时间
 create table [dbo].[kdt_upload_item] (
     [id]         int          identity (1, 1) not null,
@@ -169,14 +170,14 @@ as
 end
 
 go
---获取sku详情
+--获取sku详情(这个就是上传sku的界面需要用到的存储过程)
 create proc kdt_style_detail_proc
 (
 	@style_no varchar(30)
 )
 as
 	begin
-		select tmp.*,up.uptime from
+		select tmp.*,up.uptime,s.editionhandle from
 		(
 			select k.Com_nm,k.Sty_no,k.Col_no,
 			k.Col_dr,k.Siz_dr,Siz_no,k.Unt_pr,SUM(k.Com_qu) as Com_qu,siz_id
@@ -184,7 +185,9 @@ as
 			where Sty_no=@style_no 
 			group by k.Com_nm,k.Sty_no,k.Col_no,k.Col_dr,k.Siz_dr,k.Siz_no,k.Unt_pr,k.siz_id
 		) tmp
-		left join 
+		left join Style_EditionHandle as s
+		on s.styleCode=tmp.sty_no+tmp.col_no
+		left join --下面是记录上传过sku的日期
 		(
 			select StyleNo,ColNo,size, max(UploadTime) uptime from kdt_upload_item 
 			group by StyleNo,ColNo,size

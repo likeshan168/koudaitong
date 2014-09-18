@@ -10,12 +10,13 @@ namespace cosen.Controllers
     //[CustomRequireHttps]
     public class ProductController : Controller
     {
-        LogicModel logic = null;
+        [Ninject.Inject]
+        private LogicModel logic { get; set; }
         // GET: Product
         public ActionResult Index()
         {
             int total = 0;
-            logic = new LogicModel();
+
             var q = logic.GetProductInfos("4", string.Empty, 1, out total);
             if (total < 10 && total > 0)
             {
@@ -40,7 +41,7 @@ namespace cosen.Controllers
         public ActionResult Index(string searchT, string searchV)
         {
             int total = 0;
-            logic = new LogicModel();
+
             var q = logic.GetProductInfos(searchT, searchV, 1, out total);
             if (total < 10 && total > 0)
             {
@@ -66,7 +67,7 @@ namespace cosen.Controllers
         public JsonResult Search(string searchT, string searchV, int page)
         {
             int total = 0;
-            logic = new LogicModel();
+
             return Json(logic.GetProductInfos(searchT, searchV, page, out total));
         }
         /// <summary>
@@ -95,8 +96,8 @@ namespace cosen.Controllers
         /// <returns></returns>
         public JsonResult GetSub(int pcid)
         {
-            logic = new LogicModel();
-            return Json(logic.GetSubItemCategories(pcid,HttpContext.Cache));
+
+            return Json(logic.GetSubItemCategories(pcid, HttpContext.Cache));
         }
         /// <summary>
         /// 明细
@@ -105,9 +106,9 @@ namespace cosen.Controllers
         /// <returns></returns>
         public ActionResult Details(string styleNO)
         {
-            logic = new LogicModel();
-           return View(logic.GetDetails(styleNO,HttpContext.Cache));
-            
+
+            return View(logic.GetDetails(styleNO, HttpContext.Cache));
+
         }
         /// <summary>
         /// 添加商品
@@ -117,7 +118,7 @@ namespace cosen.Controllers
         [HttpPost]
         public ContentResult UploadProductItems(ProductItem item)
         {
-            logic = new LogicModel();
+
             return Content(logic.PostProductItem(item, Request.Files));
         }
 

@@ -17,6 +17,9 @@ namespace cosen
     {
         protected void Application_Start()
         {
+
+            DependencyResolver.SetResolver(new NinjectDenpendencyResolve());
+
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
@@ -24,7 +27,7 @@ namespace cosen
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
-          
+
         }
     }
 }

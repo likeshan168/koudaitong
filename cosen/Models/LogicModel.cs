@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 using System.Web.Caching;
 namespace cosen.Models
 {
-    public class LogicModel
+    public class LogicModel : cosen.Models.ILogicModel
     {
         private KDTApiKit kit = null;//new KDTApiKit("a698727f1934c56c4a", "6ac1c2d1bf5c6ce40bee0f34fe6ad3a6");
         private Dictionary<String, String> param = null;

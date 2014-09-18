@@ -564,6 +564,8 @@ namespace cosen.Models
 		
 		private string _uptime;
 		
+		private string _editionhandle;
+		
 		public kdt_style_detail_procResult()
 		{
 		}
@@ -724,6 +726,22 @@ namespace cosen.Models
 				if ((this._uptime != value))
 				{
 					this._uptime = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_editionhandle", DbType="VarChar(50)")]
+		public string editionhandle
+		{
+			get
+			{
+				return this._editionhandle;
+			}
+			set
+			{
+				if ((this._editionhandle != value))
+				{
+					this._editionhandle = value;
 				}
 			}
 		}

@@ -17,6 +17,9 @@ function MyTestViewModel() {
     self.price = ko.observable();//商品价格
     self.title = ko.observable("");//商品标题
     self.desc = ko.observable("");//商品描述
+    self.editionhandle = ko.observable()//上市日期
+
+
     self.is_virtual = ko.observable(0);//是否是虚拟商品
     self.post_fee = ko.observable(0.00);//运费
     self.sku_properties = ko.observable("");//sku的属性
@@ -115,6 +118,10 @@ function MyTestViewModel() {
                 nums += parseInt($(ckb).data("num")) + ",";
                 prices += parseFloat($(ckb).data("price")).toFixed(2) + ",";
                 ids += $(ckb).data("style_no") + ",";
+
+                //记录上市日期
+                self.editionhandle($(ckb).data("editionhandle"));
+                //console.log(self.editionhandle());
             }
 
         });
@@ -123,6 +130,10 @@ function MyTestViewModel() {
         self.sku_prices(prices.substr(0, prices.length - 1));
         self.sku_outer_ids(ids.substr(0, ids.length - 1));
         self.style_color_size = self.style_color_size.substr(0, self.style_color_size.length - 1);
+        if (self.editionhandle())
+            self.desc("该商品于" + self.editionhandle() + "正式上市,敬请关注！");
+        else
+            self.desc("该商品即将正式上市,敬请关注！");
         return true;
     }
 

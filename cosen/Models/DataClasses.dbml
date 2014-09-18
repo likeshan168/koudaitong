@@ -50,6 +50,7 @@
       <Column Name="Com_qu" Type="System.Decimal" DbType="Decimal(38,8)" CanBeNull="true" />
       <Column Name="siz_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="uptime" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="editionhandle" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

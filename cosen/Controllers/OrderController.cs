@@ -12,20 +12,17 @@ namespace cosen.Controllers
     /// </summary>
     public class OrderController : Controller
     {
-
-        LogicModel logic = null;
+        [Ninject.Inject]
+        private LogicModel logic { get; set; }
         [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
         [HttpPost]
-        public JsonResult Index(string searchT, string startDate, string endDate, string nickName,string status)
+        public JsonResult Index(string searchT, string startDate, string endDate, string nickName, string status)
         {
-            logic = new LogicModel();
-            //return Json(searchT + ":" + startDate + ":" + endDate + ":" + nickName+":"+status);
-
-            return Json(logic.GetTradeOrders(searchT,startDate,endDate,nickName,status));
+            return Json(logic.GetTradeOrders(searchT, startDate, endDate, nickName, status));
         }
     }
 }
